@@ -132,7 +132,7 @@ extension Array where Element == FileDescriptor.Poll {
     ///     for the corresponding file descriptors.
     ///
     /// The corresponding C function is `poll`.
-    mutating func poll(
+    public mutating func poll(
         timeout: Int = 0,
         retryOnInterrupt: Bool = true
     ) throws {
@@ -159,7 +159,7 @@ public extension FileDescriptor {
     /// The corresponding C function is `poll`.
     func poll(
         for events: FileEvents,
-        timeout: UInt = 1_000, // ms / 1sec
+        timeout: UInt, // ms / 1sec
         sleep: UInt64 = 1_000_000, // ns / 1ms
         retryOnInterrupt: Bool = true
     ) async throws -> FileEvents {
@@ -193,7 +193,7 @@ extension Array where Element == FileDescriptor.Poll {
     ///     for the corresponding file descriptors.
     ///
     /// The corresponding C function is `poll`.
-    mutating func poll(
+    public mutating func poll(
         timeout: UInt = 1_000, // ms / 1sec
         sleep: UInt64 = 1_000_000, // ns / 1ms
         retryOnInterrupt: Bool = true
