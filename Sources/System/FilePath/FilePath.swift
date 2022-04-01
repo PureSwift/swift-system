@@ -16,7 +16,7 @@
 /// encoding.
 ///
 /// On construction, `FilePath` will normalize separators by removing
-/// reduncant intermediary separators and stripping any trailing separators.
+/// redundant intermediary separators and stripping any trailing separators.
 /// On Windows, `FilePath` will also normalize forward slashes `/` into
 /// backslashes `\`, as preferred by the platform.
 ///
@@ -29,7 +29,7 @@
 ///     try fd.closeAfter { try fd.writeAll(message.utf8) }
 ///
 /// File paths conform to the
-/// and <doc://com.apple.documentation/documentation/swift/equatable>
+/// <doc://com.apple.documentation/documentation/swift/equatable>
 /// and <doc://com.apple.documentation/documentation/swift/hashable> protocols
 /// by performing the protocols' operations on their raw byte contents.
 /// This conformance allows file paths to be used,
@@ -40,7 +40,7 @@
 ///
 // TODO(docs): Section on all the new syntactic operations, lexical normalization, decomposition,
 // components, etc.
-// @available(macOS 10.16, iOS 14.0, watchOS 7.0, tvOS 14.0, *)
+/*System 0.0.1, @available(macOS 11.0, iOS 14.0, watchOS 7.0, tvOS 14.0, *)*/
 public struct FilePath {
   internal var _storage: SystemString
 
@@ -60,12 +60,12 @@ public struct FilePath {
   }
 }
 
-// @available(macOS 10.16, iOS 14.0, watchOS 7.0, tvOS 14.0, *)
+/*System 0.0.1, @available(macOS 11.0, iOS 14.0, watchOS 7.0, tvOS 14.0, *)*/
 extension FilePath {
   /// The length of the file path, excluding the null terminator.
   public var length: Int { _storage.length }
 }
 
-// @available(macOS 10.16, iOS 14.0, watchOS 7.0, tvOS 14.0, *)
+/*System 0.0.1, @available(macOS 11.0, iOS 14.0, watchOS 7.0, tvOS 14.0, *)*/
 extension FilePath: Hashable, Codable {}
 

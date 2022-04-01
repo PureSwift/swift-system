@@ -9,7 +9,7 @@
 
 // MARK: - Query API
 
-// @available(macOS 9999, iOS 9999, watchOS 9999, tvOS 9999, *)
+/*System 0.0.2, @available(macOS 12.0, iOS 15.0, watchOS 8.0, tvOS 15.0, *)*/
 extension FilePath {
   /// Returns true if this path uniquely identifies the location of
   /// a file without reference to an additional starting location.
@@ -101,7 +101,7 @@ extension FilePath {
 }
 
 // MARK: - Decompose a path
-// @available(macOS 9999, iOS 9999, watchOS 9999, tvOS 9999, *)
+/*System 0.0.2, @available(macOS 12.0, iOS 15.0, watchOS 8.0, tvOS 15.0, *)*/
 extension FilePath {
   /// Returns the root of a path if there is one, otherwise `nil`.
   ///
@@ -186,7 +186,7 @@ extension FilePath {
   }
 }
 
-// @available(macOS 9999, iOS 9999, watchOS 9999, tvOS 9999, *)
+/*System 0.0.2, @available(macOS 12.0, iOS 15.0, watchOS 8.0, tvOS 15.0, *)*/
 extension FilePath {
   /// Returns the final component of the path.
   /// Returns `nil` if the path is empty or only contains a root.
@@ -258,7 +258,7 @@ extension FilePath {
   }
 }
 
-// @available(macOS 9999, iOS 9999, watchOS 9999, tvOS 9999, *)
+/*System 0.0.2, @available(macOS 12.0, iOS 15.0, watchOS 8.0, tvOS 15.0, *)*/
 extension FilePath.Component {
   /// The extension of this file or directory component.
   ///
@@ -291,7 +291,7 @@ extension FilePath.Component {
   }
 }
 
-// @available(macOS 9999, iOS 9999, watchOS 9999, tvOS 9999, *)
+/*System 0.0.2, @available(macOS 12.0, iOS 15.0, watchOS 8.0, tvOS 15.0, *)*/
 extension FilePath {
 
   /// The extension of the file or directory last component.
@@ -358,7 +358,7 @@ extension FilePath {
 
 }
 
-// @available(macOS 9999, iOS 9999, watchOS 9999, tvOS 9999, *)
+/*System 0.0.2, @available(macOS 12.0, iOS 15.0, watchOS 8.0, tvOS 15.0, *)*/
 extension FilePath {
   /// Whether the path is in lexical-normal form, that is `.` and `..`
   /// components have been collapsed lexically (i.e. without following
@@ -439,10 +439,10 @@ extension FilePath {
 }
 
 // Modification and concatenation API
-// @available(macOS 9999, iOS 9999, watchOS 9999, tvOS 9999, *)
+/*System 0.0.2, @available(macOS 12.0, iOS 15.0, watchOS 8.0, tvOS 15.0, *)*/
 extension FilePath {
   /// If `prefix` is a prefix of `self`, removes it and returns `true`.
-  ///  Otherwise returns `false`.
+  /// Otherwise returns `false`.
   ///
   /// Example:
   ///
@@ -503,10 +503,11 @@ extension FilePath {
   /// A leading separator is spurious if `self` is non-empty.
   ///
   /// Example:
-  ///   var path: FilePath = ""
-  ///   path.append("/var/www/website") // "/var/www/website"
-  ///   path.append("static/assets") // "/var/www/website/static/assets"
-  ///   path.append("/main.css") // "/var/www/website/static/assets/main.css"
+  ///
+  ///     var path: FilePath = ""
+  ///     path.append("/var/www/website") // "/var/www/website"
+  ///     path.append("static/assets") // "/var/www/website/static/assets"
+  ///     path.append("/main.css") // "/var/www/website/static/assets/main.css"
   ///
   // TODO(Windows docs): example with roots, should we rephrase this "spurious
   // roots"?
@@ -576,7 +577,7 @@ extension FilePath {
     _append(unchecked: other._storage[...])
   }
 
-  /// Non-mutating version of `push()`
+  /// Non-mutating version of `push()`.
   ///
   // TODO(Windows docs): examples and docs with roots
   public __consuming func pushing(_ other: __owned FilePath) -> FilePath {
@@ -600,7 +601,7 @@ extension FilePath {
 }
 
 // MARK - Renamed
-// @available(macOS 9999, iOS 9999, watchOS 9999, tvOS 9999, *)
+/*System 0.0.2, @available(macOS 12.0, iOS 15.0, watchOS 8.0, tvOS 15.0, *)*/
 extension FilePath {
   @available(*, unavailable, renamed: "removingLastComponent()")
   public var dirname: FilePath { removingLastComponent() }

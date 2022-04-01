@@ -14,7 +14,7 @@
 /// of `FileDescriptor` values,
 /// in the same way as you manage a raw C file handle.
 @frozen
-// @available(macOS 10.16, iOS 14.0, watchOS 7.0, tvOS 14.0, *)
+/*System 0.0.1, @available(macOS 11.0, iOS 14.0, watchOS 7.0, tvOS 14.0, *)*/
 public struct FileDescriptor: RawRepresentable, Hashable, Codable {
   
   /// The raw C file handle.
@@ -55,7 +55,7 @@ extension FileDescriptor {
   public static var standardError: FileDescriptor { .init(rawValue: 2) }
 }
 
-// @available(macOS 10.16, iOS 14.0, watchOS 7.0, tvOS 14.0, *)
+/*System 0.0.1, @available(macOS 11.0, iOS 14.0, watchOS 7.0, tvOS 14.0, *)*/
 extension FileDescriptor {
   /// The desired read and write access for a newly opened file.
   @frozen
@@ -432,7 +432,7 @@ extension FileDescriptor {
     }
 }
 
-// @available(macOS 10.16, iOS 14.0, watchOS 7.0, tvOS 14.0, *)
+/*System 0.0.1, @available(macOS 11.0, iOS 14.0, watchOS 7.0, tvOS 14.0, *)*/
 extension FileDescriptor.AccessMode
   : CustomStringConvertible, CustomDebugStringConvertible
 {
@@ -451,7 +451,7 @@ extension FileDescriptor.AccessMode
   public var debugDescription: String { self.description }
 }
 
-// @available(macOS 10.16, iOS 14.0, watchOS 7.0, tvOS 14.0, *)
+/*System 0.0.1, @available(macOS 11.0, iOS 14.0, watchOS 7.0, tvOS 14.0, *)*/
 extension FileDescriptor.SeekOrigin
   : CustomStringConvertible, CustomDebugStringConvertible
 {
@@ -474,7 +474,7 @@ extension FileDescriptor.SeekOrigin
   public var debugDescription: String { self.description }
 }
 
-// @available(macOS 10.16, iOS 14.0, watchOS 7.0, tvOS 14.0, *)
+/*System 0.0.1, @available(macOS 11.0, iOS 14.0, watchOS 7.0, tvOS 14.0, *)*/
 extension FileDescriptor.OpenOptions
   : CustomStringConvertible, CustomDebugStringConvertible
 {
