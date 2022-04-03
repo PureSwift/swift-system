@@ -15,7 +15,7 @@ let package = Package(
     name: "swift-system",
     products: [
         .library(
-			name: "System",
+			name: "SystemPackage",
 			type: libraryType,
 			targets: ["SystemPackage"]
 		)
