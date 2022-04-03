@@ -8,7 +8,7 @@
 */
 
 #if swift(>=5.5)
-@available(macOS 12, iOS 15, *)
+@available(macOS 10.15, iOS 13, watchOS 6, tvOS 13, *)
 public extension FileDescriptor {
     
     /// Reads bytes at the current file offset into a buffer.
@@ -104,7 +104,7 @@ public extension FileDescriptor {
 }
 
 /// Pauses the current task if the operation throws ``Errno/wouldBlock`` or other async I/O errors.
-@available(macOS 12, iOS 15, *)
+@available(macOS 10.15, iOS 13, watchOS 6, tvOS 13, *)
 @usableFromInline
 func retry<T>(
     sleep nanoseconds: UInt64,
@@ -124,7 +124,7 @@ func retry<T>(
     } while true
 }
 
-@available(macOS 12, iOS 15, *)
+@available(macOS 10.15, iOS 13, watchOS 6, tvOS 13, *)
 @usableFromInline
 func retry<T>(
     sleep: UInt64, // ns

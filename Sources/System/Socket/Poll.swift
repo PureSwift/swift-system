@@ -142,7 +142,7 @@ extension Array where Element == FileDescriptor.Poll {
 }
 
 #if swift(>=5.5)
-@available(macOS 12, iOS 15, *)
+@available(macOS 10.15, iOS 13, watchOS 6, tvOS 13, *)
 public extension FileDescriptor {
     
     /// Wait for some event on a file descriptor.
@@ -177,7 +177,7 @@ public extension FileDescriptor {
     }
 }
 
-@available(macOS 12, iOS 15, *)
+@available(macOS 10.15, iOS 13, watchOS 6, tvOS 13, *)
 extension Array where Element == FileDescriptor.Poll {
     
     /// Wait for some event on a set of file descriptors.
