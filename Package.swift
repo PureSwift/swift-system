@@ -8,20 +8,14 @@
 */
 
 import PackageDescription
-
-#if os(Linux)
-let libraryName = "System"
-let libraryType: PackageDescription.Product.Library.LibraryType = .dynamic
-#else
-let libraryName = "SystemPackage"
+ 
 let libraryType: PackageDescription.Product.Library.LibraryType = .static
-#endif
 
 let package = Package(
     name: "swift-system",
     products: [
         .library(
-			name: libraryName, 
+			name: "System",
 			type: libraryType,
 			targets: ["SystemPackage"]
 		)
