@@ -12,7 +12,7 @@ public extension FileDescriptor {
     /// Poll File Descriptor
     struct Poll {
         
-        internal private(set) var bytes: CInterop.PollFileDescriptor
+        internal fileprivate(set) var bytes: CInterop.PollFileDescriptor
         
         internal init(_ bytes: CInterop.PollFileDescriptor) {
             self.bytes = bytes
@@ -138,6 +138,12 @@ extension Array where Element == FileDescriptor.Poll {
     ) throws {
         guard isEmpty else { return }
         try FileDescriptor._poll(&self, timeout: CInt(timeout), retryOnInterrupt: retryOnInterrupt).get()
+    }
+    
+    public mutating func reset() {
+        for index in 0 ..< count {
+            self[index].bytes.revents = 0
+        }
     }
 }
 
