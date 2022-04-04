@@ -194,7 +194,7 @@ extension Array where Element == FileDescriptor.Poll {
     ///
     /// The corresponding C function is `poll`.
     public mutating func poll(
-        timeout: UInt = 1_000, // ms / 1sec
+        timeout: UInt, // ms / 1sec
         sleep: UInt64 = 1_000_000, // ns / 1ms
         retryOnInterrupt: Bool = true
     ) async throws {
