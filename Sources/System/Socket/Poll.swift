@@ -136,7 +136,7 @@ extension Array where Element == FileDescriptor.Poll {
         timeout: Int = 0,
         retryOnInterrupt: Bool = true
     ) throws {
-        guard isEmpty else { return }
+        guard isEmpty == false else { return }
         try FileDescriptor._poll(&self, timeout: CInt(timeout), retryOnInterrupt: retryOnInterrupt).get()
     }
     
