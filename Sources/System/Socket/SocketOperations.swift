@@ -157,7 +157,7 @@ extension FileDescriptor {
     ) -> Result<(), Errno> {
         nothingOrErrno(retryOnInterrupt: retryOnInterrupt) {
             address.withUnsafePointer { (addressPointer, length) in
-                system_bind(T.family.rawValue, addressPointer, length)
+                system_bind(rawValue, addressPointer, length)
             }
         }
     }
