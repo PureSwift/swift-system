@@ -11,11 +11,16 @@
 */
 
 import PackageDescription
+import class Foundation.ProcessInfo
+
+// force building as dynamic library
+let dynamicLibrary = ProcessInfo.processInfo.environment["SWIFT_BUILD_DYNAMIC_LIBRARY"] != nil
+let libraryType: PackageDescription.Product.Library.LibraryType? = dynamicLibrary ? .dynamic : nil
 
 let package = Package(
     name: "swift-system",
     products: [
-        .library(name: "SystemPackage", targets: ["SystemPackage"]),
+        .library(name: "SystemPackage", type: libraryType, targets: ["SystemPackage"]),
     ],
     dependencies: [],
     targets: [
